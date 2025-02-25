@@ -2,3 +2,6 @@
 !/labs/
 !.gitignore
 *.sh
+.venv
+.vscode
+__pycache__
