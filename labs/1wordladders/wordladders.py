@@ -31,7 +31,7 @@ def build_graph(words):
         # start comparing all other words  
         for word2 in words:
             # if the dupe just continue
-            if word1 == word2:  
+            if word1 == word2:
                 continue
             
             # store the frequeny of each char in a dict
@@ -60,8 +60,7 @@ def bfs(graph: dict[str, list[str]], start: str, goal: str) -> int:
     # create deque
     queue = deque([(start, 0)])
     # create explored set with the start word added
-    explored = set([start])
-    
+    explored = set([start]) 
     
     while queue:
         # pop the next word and its distance
@@ -75,9 +74,9 @@ def bfs(graph: dict[str, list[str]], start: str, goal: str) -> int:
             # if it is what we are looking for, done, return the distance + 1
             if neighbor == goal:
                 return current_distance + 1
-            # if we have not seen the new guy, add him to the explored set and append him to the queue to be run through next
+            # if we have not seen the new guy, add him to the explored set and append him to the queue to be run through next,
             # the guy will then be poped and ran through the same process until we can find a match or the queue is empty
-            # if empty then impossible
+            # if empty then impossible  
             if neighbor not in explored:
                 explored.add(neighbor)
                 queue.append((neighbor, current_distance + 1))
